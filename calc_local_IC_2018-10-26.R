@@ -10,7 +10,9 @@ library(tidyverse)
 ######
 #Freeze files from the 320 trio cohort
 
-exp321=read.csv("320_Expanded_v1_PG_clean.csv",stringsAsFactors = F)
+expanded_input_file <- "320_Expanded_v2_RK_2018-11-05.csv"
+
+exp321=read.csv(expanded_input_file,stringsAsFactors = F)
 
 #allHPOs - static file
 allHPOs=read.csv("HPO_is.a_tree.csv",stringsAsFactors = F)
@@ -59,11 +61,11 @@ local_IC <- allHPOs %>%
   replace(., is.na(.),0)
 
 
-#write.csv(local_IC, "Local_IC_320_log2.csv",row.names = F)
+write.csv(local_IC, "Local_IC_320_log2.csv",row.names = F)
 
-#write.csv(pat_table_base, "Local_Base_per_patient_320",row.names = F)
+write.csv(pat_table_base, "Local_Base_per_patient_320",row.names = F)
 
-#write.csv(pat_table_prop, "Local_Prop_per_patient_320",row.names = F)
+write.csv(pat_table_prop, "Local_Prop_per_patient_320",row.names = F)
 
 
 

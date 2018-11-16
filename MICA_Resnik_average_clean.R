@@ -6,10 +6,10 @@
 library(memoise)
 library(dplyr)
 
-
+expanded_input_file <- "320_Expanded_v2_RK_2018-11-05.csv"
 
 #Add Data
-exp321=read.csv("320_Expanded_v1_PG_clean.csv",stringsAsFactors = F)
+exp321=read.csv(expanded_input_file,stringsAsFactors = F)
 
 #allHPOs - static file
 allHPOs=read.csv("HPO_is.a_tree.csv",stringsAsFactors = F)
