@@ -6,10 +6,10 @@
 library(memoise)
 library(dplyr)
 
-
+source("config.R")
 
 #Add Data
-exp321=read.csv("320_Expanded_v1_PG_clean.csv",stringsAsFactors = F)
+cases <- read.csv(file.path(data_dir, "320_Expanded_v1_PG_clean.csv"),stringsAsFactors = F)
 
 #allHPOs - static file
 allHPOs=read.csv("HPO_is.a_tree.csv",stringsAsFactors = F)
@@ -118,7 +118,7 @@ pat_compare <- function(pat1, pat2)
 
 
 ############### run on entire cohort 
-Compare_Cohort=function(cohort_file){
+Compare_Cohort <- function(cohort_file){
   #create output table
   patients=unique(cohort_file$famID)
   dimension <- length(unique(patients))

@@ -4,20 +4,21 @@
 #Load required libraries
 ######
 library(tidyverse)
+source("config.R")
 
 ######
 #STEP 1: Load required files
 ######
 #Freeze files from the 320 trio cohort
 
-exp321=read.csv("320_Expanded_v1_PG_clean.csv",stringsAsFactors = F)
+exp321 <- read_csv(file.path(data_dir, "320_Expanded_v2_RK_2018-11-05.csv"))
 
 #allHPOs - static file
-allHPOs=read.csv("HPO_is.a_tree.csv",stringsAsFactors = F)
+allHPOs <- read_csv(file.path(data_dir,  "HPO_is.a_tree.csv"))
 allHPOs=allHPOs[!duplicated(allHPOs$term),]
 
 #hpo_ancs - static file
-hpo_ancs=read.csv("HPO_Ancestors_Compressed.csv",stringsAsFactors = F)
+hpo_ancs <- read_csv(file.path(data_dir, "HPO_Ancestors_Compressed.csv"))
 
 
 ######
